@@ -14,6 +14,20 @@
 <script type="text/javascript">
 /* SmtpJS.com - v3.0.0 */
 var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+//Subscribe
+function subscribe(){
+	Email.send({
+    Host : "smtp.elasticemail.com:2525",
+    Username : "fdmhtr@protonmail.ch",
+    Password : "D5126F8BAACAF717BDD12A3DBEC49318F2CF",
+    To : 'yappa254@gmail.com',
+    From : "fdmhtr@protonmail.ch",
+    Subject : "This is a test",
+    Body : "Test Succesful"
+}).then(
+  message => alert(message)
+);
+}
 //Slideshow
 var slideIndex = 1;
 showSlides(slideIndex);
