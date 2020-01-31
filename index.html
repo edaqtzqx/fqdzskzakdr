@@ -50,11 +50,12 @@ function showSlides(n) {
 }
 //Mail Processor
 (function(){
-      emailjs.init("user_NFcdJWydwSG3GKgafODEW"); 
+      
    })();
 //Mail 1
 function sendy(){
-	var templateParams = {
+emailjs.init("user_NFcdJWydwSG3GKgafODEW"); 
+var templateParams = {
     name: 'James',
     notes: 'Check this out!'
 };
